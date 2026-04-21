@@ -142,10 +142,19 @@ h3 {
   border: 2px solid #a775f1;
 }
 
+.grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .grid-row-span-2 {
+    grid-row: span 2;
+  }
+
 /* components */
 .testimonial-grid {
   display: grid;
   gap: 1.5rem;
+   grid-template-columns: repeat(4, 1fr);
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
@@ -158,7 +167,18 @@ h3 {
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
 }
 
+  /* .testimonial:nth-child(3) {
+    background: red !important;
+  } */
 
+ .testimonial:last-child {
+    grid-column-start: 4;
+    /* grid-column-end: 5; */
+
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    grid-row: 1 / span 2;
+  } 
 
 
 
