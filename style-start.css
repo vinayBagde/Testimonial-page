@@ -143,34 +143,47 @@ h3 {
 }
 
 /* components */
-.testimonial-grid {
-  display: grid;
-  gap: 1.5rem;
-  padding-block: 2rem;
-  width: min(95%, 70rem);
-  margin-inline: auto;
-}
 
-@media (min-width: 50em) {
-  .testimonial-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .grid-col-span-2 {
-    grid-column: span 2;
-  }
-
-  .testimonial:last-child {
-    grid-column-start: 4;
-    grid-row: 1 / span 2;
-  }
-}
 
 .testimonial {
   font-size: var(--fs-400);
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+
+.testimonial:nth-child(1) {
+  grid-area: one;
+}
+
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+  grid-area: four;
+}
+
+.testimonial:nth-child(5) {
+  grid-area: five;
 }
 
 .testimonial.quote {
